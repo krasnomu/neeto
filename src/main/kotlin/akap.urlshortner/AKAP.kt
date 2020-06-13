@@ -102,4 +102,77 @@ object AKAPContract {
         val params = js("{from: '' }")
         params.from = fromAccount
         return tfc.deployed().then { instance ->
-            instance.contract.methods.setNodeBody(nodeId, data).se
+            instance.contract.methods.setNodeBody(nodeId, data).send(params)
+        } as Promise<Json>
+    }
+
+    fun parentOf(parentId: Int): Promise<dynamic> {
+        return tfc.deployed().then { instance ->
+            instance.contract.methods.parentOf(parentId).call()
+        }.then { res ->
+            console.log(res)
+        } as Promise<dynamic>
+    }
+
+    fun ownerOf(nodeId: JsObject): Promise<String> {
+        return tfc.deployed().then { instance ->
+            instance.contract.methods.ownerOf(nodeId).call()
+        } as Promise<String>
+    }
+
+    fun nodeBody(nodeId: JsObject): Promise<String> {
+        val response = tfc.deployed().then { instance ->
+            instance.contract.methods.nodeBody(nodeId).call()
+        }.catch { err ->
+            console.error(err)
+        }
+        return response as Promise<String>
+    }
+
+    fun getPastEvents(eventName: String, selectedAccount: String? = null): Promise<dynamic> {
+        val options = js("{filter:{sender:''},fromBlock: 0, toBlock: 'latest'}")
+        selectedAccount.let {
+            options.sender = selectedAccount
+        }
+        return tfc.deployed().then { instance ->
+            instance.getPastEvents(eventName, options)
+        }.catch { err ->
+            console.error(err)
+        } as Promise<dynamic>
+    }
+}
+
+object URLShortenerContract {
+    private var tfc: dynamic = null
+
+    fun get(): URLShortenerContract {
+        return tfc
+    }
+
+    init {
+        coroutineAppScope.launch {
+            create()
+        }
+    }
+
+    suspend fun create() {
+        val json = fetchContract("URLShortener.json").asDeferred().await()
+        tfc = truffleContract(json)
+        tfc.setProvider(Web3.get().currentProvider)
+        console.log("Created URLShortener contract " + tfc)
+    }
+
+    fun claimAndSetNodeBody(label: ByteArray, body: ByteArray, fromAccount: String): Promise<Json> {
+        val params = js("{from: '' }")
+        params.from = fromAccount
+        return tfc.deployed().then { instance ->
+            instance.contract.methods.claimAndSetNodeBody(label, body).send(params)
+        } as Promise<Json>
+    }
+
+    fun parentNodeId(): Promise<Int> {
+        return tfc.deployed().then { instance ->
+            instance.contract.methods.parentNodeId().call()
+        } as Promise<Int>
+    }
+}
