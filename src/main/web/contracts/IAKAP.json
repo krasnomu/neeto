@@ -647,4 +647,104 @@
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "// Copyright (C) 2019  Christian Felde\n// Copyright (C) 2019  Mohamed Elshami\n\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n\n// http://www.apache.org/licenses/LICENSE-2.0\n\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\npragma solidity ^0.5.0;\n\n/**\n * @title  Interface for AKA Protocol Registry (akap.me)\n *\n * @author Christian Felde\n * @author Mohamed Elshami\n *\n * @notice This interface defines basic meta data operations in addition to hashOf and claim functions on AKAP nodes.\n * @dev    Functionality related to the ERC-721 nature of nodes also available on AKAP, like transferFrom(..), etc.\n */\ncontract IAKAP {\n    enum ClaimCase {RECLAIM, NEW, TRANSFER}\n    enum NodeAttribute {EXPIRY, SEE_ALSO, SEE_ADDRESS, NODE_BODY, TOKEN_URI}\n\n    event Claim(address indexed sender, uint indexed nodeId, uint indexed parentId, bytes label, ClaimCase claimCase);\n    event AttributeChanged(address indexed sender, uint indexed nodeId, NodeAttribute attribute);\n\n    event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);\n    event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId);\n    event ApprovalForAll(address indexed owner, address indexed operator, bool approved);\n\n    /**\n     * @dev Calculate the hash of a parentId and node label.\n     *\n     * @param parentId Hash value of parent ID\n     * @param label Label of node\n     * @return Hash ID of node\n     */\n    function hashOf(uint parentId, bytes memory label) public pure returns (uint id);\n\n    /**\n     * @dev Claim or reclaim a node identified by the given parent ID hash and node label.\n     *\n     * There are 4 potential return value outcomes:\n     *\n     * 0: No action taken. This is the default if msg.sender does not have permission to act on the specified node.\n     * 1: An existing node already owned by msg.sender was reclaimed.\n     * 2: Node did not previously exist and is now minted and allocated to msg.sender.\n     * 3: An existing node already exist but was expired. Node ownership transferred to msg.sender.\n     *\n     * If msg.sender is not the owner but is instead approved \"spender\" of node, the same logic applies. Only on\n     * case 2 and 3 does msg.sender become owner of the node. On case 1 only the expiry is updated.\n     *\n     * Whenever the return value is non-zero, the expiry of the node as been set to 52 weeks into the future.\n     *\n     * @param parentId Hash value of parent ID\n     * @param label Label of node\n     * @return Returns one of the above 4 outcomes\n     */\n    function claim(uint parentId, bytes calldata label) external returns (uint status);\n\n    /**\n     * @dev Returns true if nodeId exists.\n     *\n     * @param nodeId Node hash ID\n     * @return True if node exists\n     */\n    function exists(uint nodeId) external view returns (bool);\n\n    /**\n     * @dev Returns whether msg.sender can transfer, claim or operate on a given node ID.\n     *\n     * @param nodeId Node hash ID\n     * @return bool True if approved or owner\n     */\n    function isApprovedOrOwner(uint nodeId) external view returns (bool);\n\n    /**\n     * @dev Gets the owner of the specified node ID.\n     *\n     * @param tokenId Node hash ID\n     * @ret
+  "source": "// Copyright (C) 2019  Christian Felde\n// Copyright (C) 2019  Mohamed Elshami\n\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n\n// http://www.apache.org/licenses/LICENSE-2.0\n\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\npragma solidity ^0.5.0;\n\n/**\n * @title  Interface for AKA Protocol Registry (akap.me)\n *\n * @author Christian Felde\n * @author Mohamed Elshami\n *\n * @notice This interface defines basic meta data operations in addition to hashOf and claim functions on AKAP nodes.\n * @dev    Functionality related to the ERC-721 nature of nodes also available on AKAP, like transferFrom(..), etc.\n */\ncontract IAKAP {\n    enum ClaimCase {RECLAIM, NEW, TRANSFER}\n    enum NodeAttribute {EXPIRY, SEE_ALSO, SEE_ADDRESS, NODE_BODY, TOKEN_URI}\n\n    event Claim(address indexed sender, uint indexed nodeId, uint indexed parentId, bytes label, ClaimCase claimCase);\n    event AttributeChanged(address indexed sender, uint indexed nodeId, NodeAttribute attribute);\n\n    event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);\n    event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId);\n    event ApprovalForAll(address indexed owner, address indexed operator, bool approved);\n\n    /**\n     * @dev Calculate the hash of a parentId and node label.\n     *\n     * @param parentId Hash value of parent ID\n     * @param label Label of node\n     * @return Hash ID of node\n     */\n    function hashOf(uint parentId, bytes memory label) public pure returns (uint id);\n\n    /**\n     * @dev Claim or reclaim a node identified by the given parent ID hash and node label.\n     *\n     * There are 4 potential return value outcomes:\n     *\n     * 0: No action taken. This is the default if msg.sender does not have permission to act on the specified node.\n     * 1: An existing node already owned by msg.sender was reclaimed.\n     * 2: Node did not previously exist and is now minted and allocated to msg.sender.\n     * 3: An existing node already exist but was expired. Node ownership transferred to msg.sender.\n     *\n     * If msg.sender is not the owner but is instead approved \"spender\" of node, the same logic applies. Only on\n     * case 2 and 3 does msg.sender become owner of the node. On case 1 only the expiry is updated.\n     *\n     * Whenever the return value is non-zero, the expiry of the node as been set to 52 weeks into the future.\n     *\n     * @param parentId Hash value of parent ID\n     * @param label Label of node\n     * @return Returns one of the above 4 outcomes\n     */\n    function claim(uint parentId, bytes calldata label) external returns (uint status);\n\n    /**\n     * @dev Returns true if nodeId exists.\n     *\n     * @param nodeId Node hash ID\n     * @return True if node exists\n     */\n    function exists(uint nodeId) external view returns (bool);\n\n    /**\n     * @dev Returns whether msg.sender can transfer, claim or operate on a given node ID.\n     *\n     * @param nodeId Node hash ID\n     * @return bool True if approved or owner\n     */\n    function isApprovedOrOwner(uint nodeId) external view returns (bool);\n\n    /**\n     * @dev Gets the owner of the specified node ID.\n     *\n     * @param tokenId Node hash ID\n     * @return address Node owner address\n     */\n    function ownerOf(uint256 tokenId) public view returns (address);\n\n    /**\n     * @dev Return parent hash ID for given node ID.\n     *\n     * @param nodeId Node hash ID\n     * @return Parent hash ID\n     */\n    function parentOf(uint nodeId) external view returns (uint);\n\n    /**\n     * @dev Return expiry timestamp for given node ID.\n     *\n     * @param nodeId Node hash ID\n     * @return Expiry timestamp as seconds since unix epoch\n     */\n    function expiryOf(uint nodeId) external view returns (uint);\n\n    /**\n     * @dev Return \"see also\" value for given node ID.\n     *\n     * @param nodeId Node hash ID\n     * @return \"See also\" value\n     */\n    function seeAlso(uint nodeId) external view returns (uint);\n\n    /**\n     * @dev Return \"see address\" value for given node ID.\n     *\n     * @param nodeId Node hash ID\n     * @return \"See address\" value\n     */\n    function seeAddress(uint nodeId) external view returns (address);\n\n    /**\n     * @dev Return \"node body\" value for given node ID.\n     *\n     * @param nodeId Node hash ID\n     * @return \"Node body\" value\n     */\n    function nodeBody(uint nodeId) external view returns (bytes memory);\n\n    /**\n     * @dev Return \"token URI\" value for given node ID.\n     *\n     * @param tokenId Node hash ID\n     * @return \"Token URI\" value\n     */\n    function tokenURI(uint256 tokenId) external view returns (string memory);\n\n    /**\n     * @dev Will immediately expire node on given node ID.\n     *\n     * An expired node will continue to function as any other node,\n     * but is now available to be claimed by a new owner.\n     *\n     * @param nodeId Node hash ID\n     */\n    function expireNode(uint nodeId) external;\n\n    /**\n     * @dev Set \"see also\" value on given node ID.\n     *\n     * @param nodeId Node hash ID\n     * @param value New \"see also\" value\n     */\n    function setSeeAlso(uint nodeId, uint value) external;\n\n    /**\n     * @dev Set \"see address\" value on given node ID.\n     *\n     * @param nodeId Node hash ID\n     * @param value New \"see address\" value\n     */\n    function setSeeAddress(uint nodeId, address value) external;\n\n    /**\n     * @dev Set \"node body\" value on given node ID.\n     *\n     * @param nodeId Node hash ID\n     * @param value New \"node body\" value\n     */\n    function setNodeBody(uint nodeId, bytes calldata value) external;\n\n    /**\n     * @dev Set \"token URI\" value on given node ID.\n     *\n     * @param nodeId Node hash ID\n     * @param uri New \"token URI\" value\n     */\n    function setTokenURI(uint nodeId, string calldata uri) external;\n\n    /**\n     * @dev Approves another address to transfer the given token ID\n     *\n     * The zero address indicates there is no approved address.\n     * There can only be one approved address per token at a given time.\n     * Can only be called by the token owner or an approved operator.\n     *\n     * @param to address to be approved for the given token ID\n     * @param tokenId uint256 ID of the token to be approved\n     */\n    function approve(address to, uint256 tokenId) public;\n\n    /**\n     * @dev Gets the approved address for a token ID, or zero if no address set\n     *\n     * Reverts if the token ID does not exist.\n     *\n     * @param tokenId uint256 ID of the token to query the approval of\n     * @return address currently approved for the given token ID\n     */\n    function getApproved(uint256 tokenId) public view returns (address);\n\n    /**\n     * @dev Sets or unsets the approval of a given operator\n     *\n     * An operator is allowed to transfer all tokens of the sender on their behalf.\n     *\n     * @param to operator address to set the approval\n     * @param approved representing the status of the approval to be set\n     */\n    function setApprovalForAll(address to, bool approved) public;\n\n    /**\n     * @dev Tells whether an operator is approved by a given owner.\n     *\n     * @param owner owner address which you want to query the approval of\n     * @param operator operator address which you want to query the approval of\n     * @return bool whether the given operator is approved by the given owner\n     */\n    function isApprovedForAll(address owner, address operator) public view returns (bool);\n\n    /**\n     * @dev Transfers the ownership of a given token ID to another address.\n     *\n     * Usage of this method is discouraged, use `safeTransferFrom` whenever possible.\n     * Requires the msg.sender to be the owner, approved, or operator.\n     *\n     * @param from current owner of the token\n     * @param to address to receive the ownership of the given token ID\n     * @param tokenId uint256 ID of the token to be transferred\n     */\n    function transferFrom(address from, address to, uint256 tokenId) public;\n\n    /**\n     * @dev Safely transfers the ownership of a given token ID to another address\n     *\n     * If the target address is a contract, it must implement `onERC721Received`,\n     * which is called upon a safe transfer, and return the magic value\n     * `bytes4(keccak256(\"onERC721Received(address,address,uint256,bytes)\"))`; otherwise,\n     * the transfer is reverted.\n     * Requires the msg.sender to be the owner, approved, or operator\n     *\n     * @param from current owner of the token\n     * @param to address to receive the ownership of the given token ID\n     * @param tokenId uint256 ID of the token to be transferred\n     */\n    function safeTransferFrom(address from, address to, uint256 tokenId) public;\n\n    /**\n     * @dev Safely transfers the ownership of a given token ID to another address\n     *\n     * If the target address is a contract, it must implement `onERC721Received`,\n     * which is called upon a safe transfer, and return the magic value\n     * `bytes4(keccak256(\"onERC721Received(address,address,uint256,bytes)\"))`; otherwise,\n     * the transfer is reverted.\n     * Requires the msg.sender to be the owner, approved, or operator\n     *\n     * @param from current owner of the token\n     * @param to address to receive the ownership of the given token ID\n     * @param tokenId uint256 ID of the token to be transferred\n     * @param _data bytes data to send along with a safe transfer check\n     */\n    function safeTransferFrom(address from, address to, uint256 tokenId, bytes memory _data) public;\n}",
+  "sourcePath": "/private/tmp/eth/akap/contracts/IAKAP.sol",
+  "ast": {
+    "absolutePath": "/private/tmp/eth/akap/contracts/IAKAP.sol",
+    "exportedSymbols": {
+      "IAKAP": [
+        753
+      ]
+    },
+    "id": 754,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 525,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "627:23:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title  Interface for AKA Protocol Registry (akap.me)\n * @author Christian Felde\n@author Mohamed Elshami\n * @notice This interface defines basic meta data operations in addition to hashOf and claim functions on AKAP nodes.\n@dev    Functionality related to the ERC-721 nature of nodes also available on AKAP, like transferFrom(..), etc.",
+        "fullyImplemented": false,
+        "id": 753,
+        "linearizedBaseContracts": [
+          753
+        ],
+        "name": "IAKAP",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "IAKAP.ClaimCase",
+            "id": 529,
+            "members": [
+              {
+                "id": 526,
+                "name": "RECLAIM",
+                "nodeType": "EnumValue",
+                "src": "1048:7:1"
+              },
+              {
+                "id": 527,
+                "name": "NEW",
+                "nodeType": "EnumValue",
+                "src": "1057:3:1"
+              },
+              {
+                "id": 528,
+                "name": "TRANSFER",
+                "nodeType": "EnumValue",
+                "src": "1062:8:1"
+              }
+            ],
+            "name": "ClaimCase",
+            "nodeType": "EnumDefinition",
+            "src": "1032:39:1"
+          },
+          {
+            "canonicalName": "IAKAP.NodeAttribute",
+            "id": 535,
+            "members": [
+              {
+                "id": 530,
+                "name": "EXPIRY",
+                "nodeType": "EnumValue",
+                "src": "1096:6:1"
+              },
+              {
+                "id": 531,
+                "name": "SEE_ALSO",
+                "nodeType": "EnumValue",
+                "src": "1104:8:1"
+              },
+              {
+                "id": 532,
+                "name": "SEE_ADDRESS",
+                "nodeType": "EnumValue",
+                "src": "1114:11:1"
+              },
+              {
+                "id": 533,
+                "name": "NODE_BODY",
+                "nodeType": "EnumValue",
+                "src": "1127:9:1"
+              },
+              {
+                "id": 534,
+                "name": "TOKEN_URI",
+                "nodeType": "EnumValue",
+                "src": "1138:9:1"
+              }
+            ],
+            "name": "NodeAttribute",
+            "nodeType": "EnumDefinition",
+            "src": "1076:7
