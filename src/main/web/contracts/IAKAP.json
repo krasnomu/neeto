@@ -747,4 +747,266 @@
             ],
             "name": "NodeAttribute",
             "nodeType": "EnumDefinition",
-            "src": "1076:7
+            "src": "1076:72:1"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 547,
+            "name": "Claim",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 546,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 537,
+                  "indexed": true,
+                  "name": "sender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 547,
+                  "src": "1166:22:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 536,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1166:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 539,
+                  "indexed": true,
+                  "name": "nodeId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 547,
+                  "src": "1190:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 538,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1190:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 541,
+                  "indexed": true,
+                  "name": "parentId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 547,
+                  "src": "1211:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 540,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1211:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 543,
+                  "indexed": false,
+                  "name": "label",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 547,
+                  "src": "1234:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 542,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1234:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 545,
+                  "indexed": false,
+                  "name": "claimCase",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 547,
+                  "src": "1247:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_ClaimCase_$529",
+                    "typeString": "enum IAKAP.ClaimCase"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 544,
+                    "name": "ClaimCase",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 529,
+                    "src": "1247:9:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_ClaimCase_$529",
+                      "typeString": "enum IAKAP.ClaimCase"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1165:102:1"
+            },
+            "src": "1154:114:1"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 555,
+            "name": "AttributeChanged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 554,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 549,
+                  "indexed": true,
+                  "name": "sender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 555,
+                  "src": "1296:22:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 548,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1296:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 551,
+                  "indexed": true,
+                  "name": "nodeId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 555,
+                  "src": "1320:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 550,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1320:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 553,
+                  "indexed": false,
+                  "name": "attribute",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 555,
+                  "src": "1341:23:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_NodeAttribute_$535",
+                    "typeString": "enum IAKAP.NodeAttribute"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 552,
+                    "name": "NodeAttribute",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 535,
+                    "src": "1341:13:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_NodeAttribute_$535",
+                      "typeString": "enum IAKAP.NodeAttribute"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1295:70:1"
+            },
+            "src": "1273:93:1"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 563,
+            "name": "Transfer",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 562,
+           
