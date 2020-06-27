@@ -1776,4 +1776,268 @@
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_uin
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 619,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3886:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3885:13:1"
+            },
+            "returnParameters": {
+              "id": 624,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 623,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 625,
+                  "src": "3922:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 622,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3922:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3921:6:1"
+            },
+            "scope": 753,
+            "src": "3868:60:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Return expiry timestamp for given node ID.\n     * @param nodeId Node hash ID\n@return Expiry timestamp as seconds since unix epoch",
+            "id": 632,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "expiryOf",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 628,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 627,
+                  "name": "nodeId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 632,
+                  "src": "4124:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 626,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4124:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4123:13:1"
+            },
+            "returnParameters": {
+              "id": 631,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 630,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 632,
+                  "src": "4160:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 629,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4160:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4159:6:1"
+            },
+            "scope": 753,
+            "src": "4106:60:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Return \"see also\" value for given node ID.\n     * @param nodeId Node hash ID\n@return \"See also\" value",
+            "id": 639,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "seeAlso",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 635,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 634,
+                  "name": "nodeId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 639,
+                  "src": "4333:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 633,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4333:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4332:13:1"
+            },
+            "returnParameters": {
+              "id": 638,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 637,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 639,
+                  "src": "4369:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 636,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4369:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4368:6:1"
+            },
+            "scope": 753,
+            "src": "4316:59:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Return \"see address\" value for given node ID.\n     * @param nodeId Node hash ID\n@return \"See address\" value",
+            "id": 646,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "seeAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 642,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 641,
+                  "name": "nodeId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 646,
+                  "src": "4551:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 640,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4551:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4550:13:1"
+            },
+            "returnParameters": {
+              "id": 645,
+          
