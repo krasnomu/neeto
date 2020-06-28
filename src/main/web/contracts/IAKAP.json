@@ -3062,4 +3062,236 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "8320:43:1
+              "src": "8320:43:1"
+            },
+            "returnParameters": {
+              "id": 731,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "8370:0:1"
+            },
+            "scope": 753,
+            "src": "8299:72:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Safely transfers the ownership of a given token ID to another address\n     * If the target address is a contract, it must implement `onERC721Received`,\nwhich is called upon a safe transfer, and return the magic value\n`bytes4(keccak256(\"onERC721Received(address,address,uint256,bytes)\"))`; otherwise,\nthe transfer is reverted.\nRequires the msg.sender to be the owner, approved, or operator\n     * @param from current owner of the token\n@param to address to receive the ownership of the given token ID\n@param tokenId uint256 ID of the token to be transferred",
+            "id": 741,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "safeTransferFrom",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 739,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 734,
+                  "name": "from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 741,
+                  "src": "9044:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 733,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9044:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 736,
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 741,
+                  "src": "9058:10:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 735,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9058:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 738,
+                  "name": "tokenId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 741,
+                  "src": "9070:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 737,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9070:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "9043:43:1"
+            },
+            "returnParameters": {
+              "id": 740,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "9093:0:1"
+            },
+            "scope": 753,
+            "src": "9018:76:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Safely transfers the ownership of a given token ID to another address\n     * If the target address is a contract, it must implement `onERC721Received`,\nwhich is called upon a safe transfer, and return the magic value\n`bytes4(keccak256(\"onERC721Received(address,address,uint256,bytes)\"))`; otherwise,\nthe transfer is reverted.\nRequires the msg.sender to be the owner, approved, or operator\n     * @param from current owner of the token\n@param to address to receive the ownership of the given token ID\n@param tokenId uint256 ID of the token to be transferred\n@param _data bytes data to send along with a safe transfer check",
+            "id": 752,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "safeTransferFrom",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 750,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 743,
+                  "name": "from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 752,
+                  "src": "9839:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 742,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9839:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 745,
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 752,
+                  "src": "9853:10:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 744,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9853:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 747,
+                  "name": "tokenId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 752,
+                  "src": "9865:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 746,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9865:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 749,
+                  "name": "_data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 752,
+                  "src": "9882:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 748,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9882
