@@ -3294,4 +3294,290 @@
                     "id": 748,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "9882
+                    "src": "9882:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "9838:63:1"
+            },
+            "returnParameters": {
+              "id": 751,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "9908:0:1"
+            },
+            "scope": 753,
+            "src": "9813:96:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 754,
+        "src": "1011:8900:1"
+      }
+    ],
+    "src": "627:9284:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/private/tmp/eth/akap/contracts/IAKAP.sol",
+    "exportedSymbols": {
+      "IAKAP": [
+        753
+      ]
+    },
+    "id": 754,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 525,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "627:23:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title  Interface for AKA Protocol Registry (akap.me)\n * @author Christian Felde\n@author Mohamed Elshami\n * @notice This interface defines basic meta data operations in addition to hashOf and claim functions on AKAP nodes.\n@dev    Functionality related to the ERC-721 nature of nodes also available on AKAP, like transferFrom(..), etc.",
+        "fullyImplemented": false,
+        "id": 753,
+        "linearizedBaseContracts": [
+          753
+        ],
+        "name": "IAKAP",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "IAKAP.ClaimCase",
+            "id": 529,
+            "members": [
+              {
+                "id": 526,
+                "name": "RECLAIM",
+                "nodeType": "EnumValue",
+                "src": "1048:7:1"
+              },
+              {
+                "id": 527,
+                "name": "NEW",
+                "nodeType": "EnumValue",
+                "src": "1057:3:1"
+              },
+              {
+                "id": 528,
+                "name": "TRANSFER",
+                "nodeType": "EnumValue",
+                "src": "1062:8:1"
+              }
+            ],
+            "name": "ClaimCase",
+            "nodeType": "EnumDefinition",
+            "src": "1032:39:1"
+          },
+          {
+            "canonicalName": "IAKAP.NodeAttribute",
+            "id": 535,
+            "members": [
+              {
+                "id": 530,
+                "name": "EXPIRY",
+                "nodeType": "EnumValue",
+                "src": "1096:6:1"
+              },
+              {
+                "id": 531,
+                "name": "SEE_ALSO",
+                "nodeType": "EnumValue",
+                "src": "1104:8:1"
+              },
+              {
+                "id": 532,
+                "name": "SEE_ADDRESS",
+                "nodeType": "EnumValue",
+                "src": "1114:11:1"
+              },
+              {
+                "id": 533,
+                "name": "NODE_BODY",
+                "nodeType": "EnumValue",
+                "src": "1127:9:1"
+              },
+              {
+                "id": 534,
+                "name": "TOKEN_URI",
+                "nodeType": "EnumValue",
+                "src": "1138:9:1"
+              }
+            ],
+            "name": "NodeAttribute",
+            "nodeType": "EnumDefinition",
+            "src": "1076:72:1"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 547,
+            "name": "Claim",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 546,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 537,
+                  "indexed": true,
+                  "name": "sender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 547,
+                  "src": "1166:22:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 536,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1166:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 539,
+                  "indexed": true,
+                  "name": "nodeId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 547,
+                  "src": "1190:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 538,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1190:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 541,
+                  "indexed": true,
+                  "name": "parentId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 547,
+                  "src": "1211:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 540,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1211:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 543,
+                  "indexed": false,
+                  "name": "label",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 547,
+                  "src": "1234:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 542,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1234:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 545,
+                  "indexed": false,
+                  "name": "claimCase",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 547,
+                  "src": "1247:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_ClaimCase_$529",
+                    "typeString": "enum IAKAP.ClaimCase"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 544,
+                    "name": "ClaimCase",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 529,
+                    "src": "1247:9:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_ClaimCase_$529",
+                      "typeString": "enum IAKAP.ClaimCase"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1165:102:1"
+            },
+            "src": "1154:114:1"
+          },
+          {
+            "anonymous": false,
+            "documentation
