@@ -4083,4 +4083,273 @@
             "documentation": "@dev Claim or reclaim a node identified by the given parent ID hash and node label.\n     * There are 4 potential return value outcomes:\n     * 0: No action taken. This is the default if msg.sender does not have permission to act on the specified node.\n1: An existing node already owned by msg.sender was reclaimed.\n2: Node did not previously exist and is now minted and allocated to msg.sender.\n3: An existing node already exist but was expired. Node ownership transferred to msg.sender.\n     * If msg.sender is not the owner but is instead approved \"spender\" of node, the same logic applies. Only on\ncase 2 and 3 does msg.sender become owner of the node. On case 1 only the expiry is updated.\n     * Whenever the return value is non-zero, the expiry of the node as been set to 52 weeks into the future.\n     * @param parentId Hash value of parent ID\n@param label Label of node\n@return Returns one of the above 4 outcomes",
             "id": 597,
             "implemented": false,
-            "
+            "kind": "function",
+            "modifiers": [],
+            "name": "claim",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 593,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 590,
+                  "name": "parentId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 597,
+                  "src": "2964:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 589,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2964:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 592,
+                  "name": "label",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 597,
+                  "src": "2979:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 591,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2979:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2963:37:1"
+            },
+            "returnParameters": {
+              "id": 596,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 595,
+                  "name": "status",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 597,
+                  "src": "3019:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 594,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3019:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3018:13:1"
+            },
+            "scope": 753,
+            "src": "2949:83:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Returns true if nodeId exists.\n     * @param nodeId Node hash ID\n@return True if node exists",
+            "id": 604,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "exists",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 600,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 599,
+                  "name": "nodeId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 604,
+                  "src": "3189:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 598,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3189:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3188:13:1"
+            },
+            "returnParameters": {
+              "id": 603,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 602,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 604,
+                  "src": "3225:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 601,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3225:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3224:6:1"
+            },
+            "scope": 753,
+            "src": "3173:58:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Returns whether msg.sender can transfer, claim or operate on a given node ID.\n     * @param nodeId Node hash ID\n@return bool True if approved or owner",
+            "id": 611,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isApprovedOrOwner",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 607,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 606,
+                  "name": "nodeId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 611,
+                  "src": "3457:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 605,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3457:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3456:13:1"
+            },
+            "returnParameters": {
+              "id": 610,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 609,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 611,
+                  "src": "3493:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 608,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3493:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3492:6:1"
+            },
+            "scope": 753,
+            "src": "3430:69:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Gets the owner of the specified node ID.\n     * @param tokenId Node hash ID\n@return address Node owner address",
+            "id": 618,
+            "implemented": false,
+   
