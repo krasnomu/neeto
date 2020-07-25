@@ -6095,4 +6095,116 @@
         "details": "Returns whether msg.sender can transfer, claim or operate on a given node ID.",
         "params": {
           "nodeId": "Node hash ID"
-    
+        },
+        "return": "bool True if approved or owner"
+      },
+      "nodeBody(uint256)": {
+        "details": "Return \"node body\" value for given node ID.",
+        "params": {
+          "nodeId": "Node hash ID"
+        },
+        "return": "\"Node body\" value"
+      },
+      "ownerOf(uint256)": {
+        "details": "Gets the owner of the specified node ID.",
+        "params": {
+          "tokenId": "Node hash ID"
+        },
+        "return": "address Node owner address"
+      },
+      "parentOf(uint256)": {
+        "details": "Return parent hash ID for given node ID.",
+        "params": {
+          "nodeId": "Node hash ID"
+        },
+        "return": "Parent hash ID"
+      },
+      "safeTransferFrom(address,address,uint256)": {
+        "details": "Safely transfers the ownership of a given token ID to another address     * If the target address is a contract, it must implement `onERC721Received`, which is called upon a safe transfer, and return the magic value `bytes4(keccak256(\"onERC721Received(address,address,uint256,bytes)\"))`; otherwise, the transfer is reverted. Requires the msg.sender to be the owner, approved, or operator",
+        "params": {
+          "from": "current owner of the token",
+          "to": "address to receive the ownership of the given token ID",
+          "tokenId": "uint256 ID of the token to be transferred"
+        }
+      },
+      "safeTransferFrom(address,address,uint256,bytes)": {
+        "details": "Safely transfers the ownership of a given token ID to another address     * If the target address is a contract, it must implement `onERC721Received`, which is called upon a safe transfer, and return the magic value `bytes4(keccak256(\"onERC721Received(address,address,uint256,bytes)\"))`; otherwise, the transfer is reverted. Requires the msg.sender to be the owner, approved, or operator",
+        "params": {
+          "_data": "bytes data to send along with a safe transfer check",
+          "from": "current owner of the token",
+          "to": "address to receive the ownership of the given token ID",
+          "tokenId": "uint256 ID of the token to be transferred"
+        }
+      },
+      "seeAddress(uint256)": {
+        "details": "Return \"see address\" value for given node ID.",
+        "params": {
+          "nodeId": "Node hash ID"
+        },
+        "return": "\"See address\" value"
+      },
+      "seeAlso(uint256)": {
+        "details": "Return \"see also\" value for given node ID.",
+        "params": {
+          "nodeId": "Node hash ID"
+        },
+        "return": "\"See also\" value"
+      },
+      "setApprovalForAll(address,bool)": {
+        "details": "Sets or unsets the approval of a given operator     * An operator is allowed to transfer all tokens of the sender on their behalf.",
+        "params": {
+          "approved": "representing the status of the approval to be set",
+          "to": "operator address to set the approval"
+        }
+      },
+      "setNodeBody(uint256,bytes)": {
+        "details": "Set \"node body\" value on given node ID.",
+        "params": {
+          "nodeId": "Node hash ID",
+          "value": "New \"node body\" value"
+        }
+      },
+      "setSeeAddress(uint256,address)": {
+        "details": "Set \"see address\" value on given node ID.",
+        "params": {
+          "nodeId": "Node hash ID",
+          "value": "New \"see address\" value"
+        }
+      },
+      "setSeeAlso(uint256,uint256)": {
+        "details": "Set \"see also\" value on given node ID.",
+        "params": {
+          "nodeId": "Node hash ID",
+          "value": "New \"see also\" value"
+        }
+      },
+      "setTokenURI(uint256,string)": {
+        "details": "Set \"token URI\" value on given node ID.",
+        "params": {
+          "nodeId": "Node hash ID",
+          "uri": "New \"token URI\" value"
+        }
+      },
+      "tokenURI(uint256)": {
+        "details": "Return \"token URI\" value for given node ID.",
+        "params": {
+          "tokenId": "Node hash ID"
+        },
+        "return": "\"Token URI\" value"
+      },
+      "transferFrom(address,address,uint256)": {
+        "details": "Transfers the ownership of a given token ID to another address.     * Usage of this method is discouraged, use `safeTransferFrom` whenever possible. Requires the msg.sender to be the owner, approved, or operator.",
+        "params": {
+          "from": "current owner of the token",
+          "to": "address to receive the ownership of the given token ID",
+          "tokenId": "uint256 ID of the token to be transferred"
+        }
+      }
+    },
+    "title": "Interface for AKA Protocol Registry (akap.me)"
+  },
+  "userdoc": {
+    "methods": {},
+    "notice": "This interface defines basic meta data operations in addition to hashOf and claim functions on AKAP nodes."
+  }
+}

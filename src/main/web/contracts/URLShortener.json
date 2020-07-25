@@ -1,0 +1,90 @@
+{
+  "contractName": "URLShortener",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "name": "akapAddress",
+          "type": "address"
+        },
+        {
+          "name": "domain",
+          "type": "bytes"
+        },
+        {
+          "name": "tokenURI",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "label",
+          "type": "bytes"
+        },
+        {
+          "name": "body",
+          "type": "bytes"
+        }
+      ],
+      "name": "claimAndSetNodeBody",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "reclaim",
+      "outputs": [
+        {
+          "name": "status",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "parentNodeId",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getDomain",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"parentNodeId\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"label\",\"type\":\"bytes\"},{\"name\":\"body\",\"type\":\"bytes\"}],\"name\":\"claimAndSetNodeBody\",\"outputs\":[{\"name\":\"success\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"reclaim\",\"outputs\":[{\"name\":\"status\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getDomain\",\"outputs\":[{\"name\":\"\",\"type\":\"bytes\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"akapAddress\",\"type\":\"address\"},{\"name\":\"domain\",\"type\":\"bytes\"},{\"name\":\"tokenURI\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{\"claimAndSetNodeBody(bytes,bytes)\":{\"details\":\"claims a child node and sets the node body. See 'AKAP.claim' and 'AKAP.setNodeBody'.    * The new child node will transferred to the sender    * returns 1 if completed successfully otherwise 0\"},\"reclaim()\":{\"details\":\"extends the claim on the parent re-issuing 'AKAP.claim' function    * See 'AKAP.claim' 'case 1'*\"}}},\"userdoc\":{\"methods\":{\"getDomain()\":{\"notice\":\"returns the domain of this URLShortener instance*\"},\"parentNodeId()\":{\"notice\":\"returns the parent 'root' Id which is the hash of 0x0 and 'bytes' value of domain*\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/melshami/Projects/dapps/akap/AKAP-url-shortener-contracts/contracts/URLShortener.sol\":\"URLShortener\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/melshami/Projects/dapps/akap/AKAP-url-shortener-contracts/contracts/URLShortener.sol\":{\"keccak256\":\"0x00889d64e5ea32a319320b895d7c4be4cd1bfdcd8731440ca4b894fd6945a2a0\",\"urls\":[\"bzzr://93baa46a751a48c0e912a9ec378b402fd4fd50aede068329b57192122f453b40\"]},\"/Users/melshami/Projects/dapps/akap/AKAP/contracts/IAKAP.sol\":{\"keccak256\":\"0x72fbc0eba4025ba4757a37b807ff57adf777d933c333fdbe78e7a93f0e031188\",\"urls\":[\"bzzr://af7e1c1fce5e1c261ac3392ce44f01269ed3d4dea8690571c8d7623cd6969c31\"]}},\"version\":1}",
+  "bytecode": "0x60806040523480156200001157600080fd5b5060405162000be938038062000be9833981018060405260608110156200003757600080fd5b8151602083018051919392830192916401000000008111156200005957600080fd5b820160208101848111156200006d57600080fd5b81516401000000008111828201871017156200008857600080fd5b505092919060200180516401000000008111
