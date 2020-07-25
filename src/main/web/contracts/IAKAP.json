@@ -5862,4 +5862,237 @@
           },
           {
             "body": null,
-            "documentation": "@dev Safely transfers the ownership of a given token ID to another address\n     * If the target address is a contract, it must implement `onERC721Received`,\nwhich is called upon a safe transfer, and return the magic value\n`bytes4(keccak256(\"onERC721Received(address,address,uint256,bytes)\"))`; otherwise,\nthe transfer is reverted.\nRequires the msg.sender to be the owner, approved, or operator\n     * @param from current owner of the token\n@param to address to receive the ownership of the given token ID\n@param tokenId uint256 ID of the
+            "documentation": "@dev Safely transfers the ownership of a given token ID to another address\n     * If the target address is a contract, it must implement `onERC721Received`,\nwhich is called upon a safe transfer, and return the magic value\n`bytes4(keccak256(\"onERC721Received(address,address,uint256,bytes)\"))`; otherwise,\nthe transfer is reverted.\nRequires the msg.sender to be the owner, approved, or operator\n     * @param from current owner of the token\n@param to address to receive the ownership of the given token ID\n@param tokenId uint256 ID of the token to be transferred\n@param _data bytes data to send along with a safe transfer check",
+            "id": 752,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "safeTransferFrom",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 750,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 743,
+                  "name": "from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 752,
+                  "src": "9839:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 742,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9839:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 745,
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 752,
+                  "src": "9853:10:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 744,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9853:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 747,
+                  "name": "tokenId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 752,
+                  "src": "9865:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 746,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9865:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 749,
+                  "name": "_data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 752,
+                  "src": "9882:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 748,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9882:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "9838:63:1"
+            },
+            "returnParameters": {
+              "id": 751,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "9908:0:1"
+            },
+            "scope": 753,
+            "src": "9813:96:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 754,
+        "src": "1011:8900:1"
+      }
+    ],
+    "src": "627:9284:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.12+commit.7709ece9.Emscripten.clang"
+  },
+  "networks": {
+    "1": {
+      "address": "0xaacCAAB0E85b1EfCEcdBA88F4399fa6CAb402349",
+      "transactionHash": "0x8a1c2b27f7e1d4bfd4793e764337c1c253af79f803a6f113558cabb51c625899"
+    },
+    "3": {
+      "address": "0xaacCAAB0E85b1EfCEcdBA88F4399fa6CAb402349",
+      "transactionHash": "0x66308ba90a40d3e29ee6f9cca0ec85f871cd0d383cf340c21e43686014f64aef"
+    },
+    "4": {
+      "address": "0xaacCAAB0E85b1EfCEcdBA88F4399fa6CAb402349",
+      "transactionHash": "0x66308ba90a40d3e29ee6f9cca0ec85f871cd0d383cf340c21e43686014f64aef"
+    },
+    "5": {
+      "address": "0xaacCAAB0E85b1EfCEcdBA88F4399fa6CAb402349",
+      "transactionHash": "0x66308ba90a40d3e29ee6f9cca0ec85f871cd0d383cf340c21e43686014f64aef"
+    },
+    "42": {
+      "address": "0xaacCAAB0E85b1EfCEcdBA88F4399fa6CAb402349",
+      "transactionHash": "0x66308ba90a40d3e29ee6f9cca0ec85f871cd0d383cf340c21e43686014f64aef"
+    }
+  },
+  "schemaVersion": "3.0.19",
+  "updatedAt": "2020-01-18T12:39:58.041Z",
+  "devdoc": {
+    "author": "Christian FeldeMohamed Elshami",
+    "details": "Functionality related to the ERC-721 nature of nodes also available on AKAP, like transferFrom(..), etc.",
+    "methods": {
+      "approve(address,uint256)": {
+        "details": "Approves another address to transfer the given token ID     * The zero address indicates there is no approved address. There can only be one approved address per token at a given time. Can only be called by the token owner or an approved operator.",
+        "params": {
+          "to": "address to be approved for the given token ID",
+          "tokenId": "uint256 ID of the token to be approved"
+        }
+      },
+      "claim(uint256,bytes)": {
+        "details": "Claim or reclaim a node identified by the given parent ID hash and node label.     * There are 4 potential return value outcomes:     * 0: No action taken. This is the default if msg.sender does not have permission to act on the specified node. 1: An existing node already owned by msg.sender was reclaimed. 2: Node did not previously exist and is now minted and allocated to msg.sender. 3: An existing node already exist but was expired. Node ownership transferred to msg.sender.     * If msg.sender is not the owner but is instead approved \"spender\" of node, the same logic applies. Only on case 2 and 3 does msg.sender become owner of the node. On case 1 only the expiry is updated.     * Whenever the return value is non-zero, the expiry of the node as been set to 52 weeks into the future.",
+        "params": {
+          "label": "Label of node",
+          "parentId": "Hash value of parent ID"
+        },
+        "return": "Returns one of the above 4 outcomes"
+      },
+      "exists(uint256)": {
+        "details": "Returns true if nodeId exists.",
+        "params": {
+          "nodeId": "Node hash ID"
+        },
+        "return": "True if node exists"
+      },
+      "expireNode(uint256)": {
+        "details": "Will immediately expire node on given node ID.     * An expired node will continue to function as any other node, but is now available to be claimed by a new owner.",
+        "params": {
+          "nodeId": "Node hash ID"
+        }
+      },
+      "expiryOf(uint256)": {
+        "details": "Return expiry timestamp for given node ID.",
+        "params": {
+          "nodeId": "Node hash ID"
+        },
+        "return": "Expiry timestamp as seconds since unix epoch"
+      },
+      "getApproved(uint256)": {
+        "details": "Gets the approved address for a token ID, or zero if no address set     * Reverts if the token ID does not exist.",
+        "params": {
+          "tokenId": "uint256 ID of the token to query the approval of"
+        },
+        "return": "address currently approved for the given token ID"
+      },
+      "hashOf(uint256,bytes)": {
+        "details": "Calculate the hash of a parentId and node label.",
+        "params": {
+          "label": "Label of node",
+          "parentId": "Hash value of parent ID"
+        },
+        "return": "Hash ID of node"
+      },
+      "isApprovedForAll(address,address)": {
+        "details": "Tells whether an operator is approved by a given owner.",
+        "params": {
+          "operator": "operator address which you want to query the approval of",
+          "owner": "owner address which you want to query the approval of"
+        },
+        "return": "bool whether the given operator is approved by the given owner"
+      },
+      "isApprovedOrOwner(uint256)": {
+        "details": "Returns whether msg.sender can transfer, claim or operate on a given node ID.",
+        "params": {
+          "nodeId": "Node hash ID"
+    
