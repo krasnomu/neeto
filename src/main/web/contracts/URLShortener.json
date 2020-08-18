@@ -4064,4 +4064,199 @@
                   "expression": {
                     "argumentTypes": null,
                     "id": 204,
-                    "name": "_parentNodeI
+                    "name": "_parentNodeId",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 61,
+                    "src": "1736:13:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 203,
+                  "id": 205,
+                  "nodeType": "Return",
+                  "src": "1729:20:1"
+                }
+              ]
+            },
+            "documentation": "returns the parent 'root' Id which is the hash of 0x0 and 'bytes' value of domain*",
+            "id": 207,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "parentNodeId",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 200,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1689:2:1"
+            },
+            "returnParameters": {
+              "id": 203,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 202,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 207,
+                  "src": "1713:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 201,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1713:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1712:6:1"
+            },
+            "scope": 216,
+            "src": "1668:88:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 214,
+              "nodeType": "Block",
+              "src": "1889:31:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 212,
+                    "name": "_domain",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 65,
+                    "src": "1906:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage",
+                      "typeString": "bytes storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 211,
+                  "id": 213,
+                  "nodeType": "Return",
+                  "src": "1899:14:1"
+                }
+              ]
+            },
+            "documentation": "returns the domain of this URLShortener instance*",
+            "id": 215,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getDomain",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 208,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1851:2:1"
+            },
+            "returnParameters": {
+              "id": 211,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 210,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 215,
+                  "src": "1875:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 209,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1875:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1874:14:1"
+            },
+            "scope": 216,
+            "src": "1833:87:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 217,
+        "src": "67:1856:1"
+      }
+    ],
+    "src": "0:1923:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {
+    "1": {
+      "events": {},
+      "links": {},
+      "address": "0xD76E894d6186F787eC987aaa2edf8973fE4759e1",
+      "transactionHash": "0x8c316a7280e7521c9edb9fa1d44a657fd32aca98fc4b57af8b3e99cfd859951d"
+    },
+    "3": {
+      "events": {},
+      "links": {},
+      "address": "0x57a98d2Fa0353E0D0805D2a2526E7288eF195D82",
+      "transactionHash": "0xbaaedcbf002a1a40f0972bbd7945552770ea2f0ff18b6a2017fa2e476dbfbf2e"
+    }
+  },
+  "schemaVersion": "3.0.16",
+  "updatedAt": "2020-01-21T23:48:52.158Z",
+  "devdoc": {
+    "methods": {
+      "claimAndSetNodeBody(bytes,bytes)": {
+        "details": "claims a child node and sets the node body. See 'AKAP.claim' and 'AKAP.setNodeBody'.    * The new child node will transferred to the sender    * returns 1 if completed successfully otherwise 0"
+      },
+      "reclaim()": {
+        "details": "extends the claim on the parent re-issuing 'AKAP.claim' function    * See 'AKAP.claim' 'case 1'*"
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "getDomain()": {
+        "notice": "returns the domain of this URLShortener instance*"
+      },
+      "parentNodeId()": {
+        "notice": "returns the parent 'root' Id which is the hash of 0x0 and 'bytes' value of domain*"
+      }
+    }
+  }
+}
